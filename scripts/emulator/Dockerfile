@@ -13,5 +13,4 @@ RUN cmake -C ./cmake/caches/emulator.cmake . \
 RUN make -j
 
 ENTRYPOINT ["./bin/kkemu"]
-EXPOSE 21324 21324/udp
-EXPOSE 21325 21325/udp
+EXPOSE 21324/udp 21325
