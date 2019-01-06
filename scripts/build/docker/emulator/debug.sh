@@ -19,5 +19,8 @@ docker run -t \
         -DCMAKE_COLOR_MAKEFILE=ON &&\
       make all && \
       (make xunit || true) && \
+      (./bin/kkemu &) && \
+      cd /root/keepkey-firmware/deps/python-keepkey/tests && \
+      python -m unittest discover && \
       cp -r /root/build /root/keepkey-firmware/build && \
       chown -R \`stat -c \"%u:%g\" /root/keepkey-firmware\` /root/keepkey-firmware/build"
